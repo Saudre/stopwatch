@@ -1,0 +1,381 @@
+:root {
+    --clr-black-t: hsl(0, 0%, 0%, 0.5);
+    --clr-black: hsl(0, 0%, 0%);
+    --clr-blue-t-up: hsl(189, 100%, 50%, 0.5);
+    --clr-blue-t: hsl(189, 100%, 50%, 0.3);
+    --clr-blue: hsl(189, 100%, 50%);
+    --clr-green-t-up: hsl(113, 100%, 50%, 0.5);
+    --clr-green-t: hsl(113, 100%, 50%, 0.3);
+    --clr-green: hsl(113, 100%, 50%);
+    --clr-neutral-sc-t: hsl(213, 13%, 12%, 0.8);
+    --clr-neutral-sc: hsl(213, 13%, 12%);
+    --clr-neutral: hsl(213, 13%, 16%);
+    --clr-orange-t-up: hsl(25, 100%, 50%, 0.5);
+    --clr-orange-t: hsl(25, 100%, 50%, 0.3);
+    --clr-orange: hsl(25, 100%, 50%);
+    --clr-pink-t-up: hsl(310, 100%, 50%, 0.5);
+    --clr-pink-t: hsl(310, 100%, 50%, 0.3);
+    --clr-pink: hsl(310, 100%, 50%);
+    --clr-purple-t-up: hsl(278, 100%, 50%, 0.5);
+    --clr-purple-t: hsl(278, 100%, 50%, 0.3);
+    --clr-purple: hsl(278, 100%, 50%);
+    --clr-red-t-up: hsl(0, 100%, 50%, 0.5);
+    --clr-red-t: hsl(0, 100%, 50%, 0.3);
+    --clr-red: hsl(0, 100%, 50%);
+    --clr-txt-sc: hsl(0, 0%, 95%);
+    --clr-txt-t: hsl(0, 0%, 80%, 0.5);
+    --clr-txt: hsl(0, 0%, 80%);
+    --clr-white-t-up: hsl(0, 0%, 100%, 0.5);
+    --clr-white-t: hsl(0, 0%, 100%, 0.3);
+    --clr-white: hsl(0, 0%, 100%);
+    --clr-yellow-t-up: hsl(52, 100%, 50%, 0.5);
+    --clr-yellow-t: hsl(52, 100%, 50%, 0.3);
+    --clr-yellow: hsl(52, 100%, 50%);
+    --font: "Barlow Condensed", sans-serif;
+    --sd-dim: 0 0 5px 1px hsl(0, 100%, 5%);
+    --sd: 0 0 10px 2px hsl(0, 100%, 5%);
+    scroll-behavior: smooth;
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: var(--font)
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    background-color: var(--clr-neutral-sc);
+}
+
+.sw-app {
+    background-color: var(--clr-neutral);
+    border-radius: 5px;
+    box-shadow: var(--sd);
+    display: flex;
+    flex-direction: column;
+    margin: 1rem auto;
+    max-width: 500px;
+    padding: 1rem;
+    width: 100%;
+}
+
+.sw-app h1 {
+    font-size: 4rem;
+    color:var(--clr-blue);
+    text-align: center;
+}
+
+.timer {
+    background-color: var(--clr-blue-t);
+    border: 1px solid var(--clr-blue);
+    display: flex;
+    justify-content: center;
+    margin: 1rem auto;
+    padding: 1rem;
+    width: fit-content;
+}
+
+.timer span:nth-child(even) {
+    padding: 0 5px;
+}
+
+.timer span:nth-child(odd) {
+    background-color: var(--clr-neutral-sc-t);
+    box-shadow: inset var(--sd-dim);
+    display: flex;
+    justify-content: center;
+    padding: 0 0.5rem;
+}
+
+.timer span {
+    font-size: 8vw;
+    font-weight: bold;
+    color: var(--clr-white);
+    font-family: monospace;
+    border-radius: 5px;
+}
+
+@media screen and (min-width: 510px) {
+    .timer span {
+        font-size: 3.5rem;
+    }
+}
+
+/* Stopwatch controls */
+
+.sw-ctl {
+    display: flex;
+    gap: 1rem;
+    justify-content: stretch;
+    padding: 1rem;
+}
+
+.sw-ctl button,
+.sw-rct-table button {
+    background-color: var(--clr-blue-t);
+    border-radius: 5px;
+    border: none;
+    box-shadow: var(--sd-dim);
+    color: var(--clr-white);
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 0.5rem;
+    transition: background-color 0.5s;
+    width: 100%;
+}
+
+.sw-ctl button:hover,
+.sw-rct-table button:hover {
+    background-color: var(--clr-blue-t-up);
+}
+
+/* Record title */
+
+.sw-inp-txt {
+    border: none;
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.sw-inp-txt label {
+    background-color: var(--clr-blue-t);
+    border-radius: 5px;
+    box-shadow: inset var(--sd-dim);
+    color: var(--clr-txt-sc);
+    font-size: 1.5rem;
+    padding: 0.5rem;
+}
+
+.sw-inp-txt input {
+    background-color: var(--clr-neutral-sc);
+    border-radius: 5px;
+    border: none;
+    box-shadow: inset var(--sd-dim);
+    color: var(--clr-blue);
+    font-size: 1rem;
+    font-weight: bold;
+    margin-left: .5rem;
+    padding: 0 .5rem;
+    text-transform: uppercase;
+    width: 80%;
+}
+
+.sw-inp-txt input::placeholder {
+    color: var(--clr-txt);
+    font-weight: bold;
+}
+
+/* Colors Control */
+
+.ctr-colors {
+    border: none;
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 1rem;
+    padding: 1rem;
+    position: relative;
+}
+
+.ctr-colors input {
+    cursor: pointer;
+}
+
+.ctr-colors input::before {
+    border-radius: 3px;
+    box-shadow: var(--sd-dim);
+    content: '';
+    height: 25px;
+    position: absolute;
+    width: 25px;
+}
+
+.ctr-colors input[value="blank"]::before {
+    background-color: var(--clr-txt);
+}
+
+.ctr-colors input[value="blue"]::before {
+    background-color: var(--clr-blue);
+}
+
+.ctr-colors input[value="red"]::before {
+    background-color: var(--clr-red);
+}
+
+.ctr-colors input[value="yellow"]::before {
+    background-color: var(--clr-yellow);
+}
+
+.ctr-colors input[value="green"]::before {
+    background-color: var(--clr-green);
+}
+
+.ctr-colors input[value="orange"]::before {
+    background-color: var(--clr-orange);
+}
+
+.ctr-colors input[value="purple"]::before {
+    background-color: var(--clr-purple);
+}
+
+.ctr-colors input[value="pink"]::before {
+    background-color: var(--clr-pink);
+}
+
+.ctr-colors input:checked::after {
+    animation: pickColor .5s ease-out;
+    background-color: var(--clr-black);
+    border-radius: 3px;
+    content: ' ';
+    height: 15px;
+    margin: 5px;
+    position: absolute;
+    width: 15px;
+}
+
+@keyframes pickColor {
+    from {
+        border-radius: 1;
+    }
+    50% {
+        scale: 1.4
+    }
+    to {
+        scale: 1
+    }
+}
+
+/* Records table */
+
+.sw-rct-table {
+    background-color: var(--clr-neutral-sc);
+    border-radius: 5px;
+    box-shadow: inset var(--sd);
+    margin-top: 1rem;
+    padding: 0.5rem;
+}
+
+.sw-rct-table h2 {
+    color: var(--clr-white);
+    font-size: 2.5rem;
+    text-align: center;
+}
+
+.sw-rct-table ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    justify-content: center;
+    padding: 1rem;
+    width: 100%;
+}
+
+.sw-rct-table li {
+    background-color: var(--clr-neutral);
+    border-radius: 0 3px 3px 0;
+    box-shadow: var(--sd-dim);
+    color: var(--clr-white);
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+.sw-rct-table li:nth-child(even) {
+    background-color: var(--clr-black);
+}
+
+.sw-rct-table li > span:first-child {
+    align-items: center;
+    box-shadow: var(--sd-dim);
+    display: flex;
+    font-size: 1rem;
+    justify-content: center;
+    min-height: 30px;
+    padding: 0 0.5rem;
+    text-align: center;
+    text-transform: uppercase;
+    width: 50%;
+}
+
+@media screen and (min-width:500px) {
+    .sw-rct-table li > span:first-child {
+        font-size: 1.5rem;
+    }
+}
+
+.sw-rct-table li > span:last-child {
+    background-color: var(--clr-neutral);
+    border-left: 3px solid var(--clr-neutral);
+    border-radius: 0 3px 3px 0;
+    box-shadow: var(--sd-dim);
+    cursor: pointer;
+    display: flex;
+    font-size: 1rem;
+    margin-left: auto;
+    padding: 0.3rem;
+    transition: background-color .5s, border .5s;
+}
+
+.sw-rct-table li > span:last-child:hover {
+    background-color: var(--clr-red-t);
+    border-left: 3px solid var(--clr-red-t-up);
+}
+
+.sw-rct-table li > span:nth-child(2) {
+    display: flex;
+    font-size: 4vw;
+    justify-content: space-between;
+    margin: auto 0 auto .7rem;
+    width: 35%;
+}
+
+@media screen and (min-width:500px) {
+    .sw-rct-table li > span:nth-child(2) {
+        font-size: 1.5rem;
+        width: 40%;
+    }
+}
+
+.rcd-in {
+    animation: recordIn .5s ease-in;
+}
+
+@keyframes recordIn {
+    from {
+        transform: translateY(-1rem);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.rcd-out {
+    animation: recordOut .5s ease-in;
+}
+
+@keyframes recordOut {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateX(2rem);
+        opacity: 0;
+    }
+}
+
+.rec-controls {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 1rem;
+}
+
+.rec-controls button {
+    width: 100px;
+}

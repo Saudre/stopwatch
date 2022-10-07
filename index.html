@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./stopwatch.css">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed&display=swap" rel="stylesheet">
+    <script src="./stopwatch.js" defer></script>
+    <title>Stopwatch</title>
+</head>
+<body>
+    <div id="app-sw" class="sw-app">
+        
+        <h1>STOPWATCH</h1>
+        
+        <!-- Timer -->
+        <div id="timer" class="timer"> 
+            <span id="hours">00</span>
+            <span>:</span>
+            <span id="minutes">00</span>
+            <span>:</span>
+            <span id="seconds">00</span>
+            <span>:</span>
+            <span id="milliseconds">00</span>
+        </div>
+        
+        <!-- Controls -->
+        <div id="controls" class="sw-ctl">
+            <button id="start" type="button" class="btn-start">▶</button>
+            <button id="stop" type="button" class="btn-stop">◼</button>
+            <button id="reset" type="button" class="btn-reset">RESET</button>
+            <button id="save" type="button" class="btn-save">SAVE</button>
+        </div>
+
+        <!-- Record Title -->
+        <fieldset class="sw-inp-txt">
+            <label for="record-title">NAME</label>      
+            <input id="record-title" type="text" placeholder="team 1 ... saudre ... red ..." />
+        </fieldset>
+
+        <!-- Colors -->
+        <fieldset id="colors" class="ctr-colors">
+            <input type="radio" name="color" value="blank" checked/>
+            <input type="radio" name="color" value="blue"/>
+            <input type="radio" name="color" value="red" />
+            <input type="radio" name="color" value="green"/>
+            <input type="radio" name="color" value="yellow"/>
+            <input type="radio" name="color" value="orange">
+            <input type="radio" name="color" value="purple">
+            <input type="radio" name="color" value="pink">
+        </fieldset>
+       
+        <!-- Records -->
+        <div id="records" class="sw-rct-table">
+            <h2>RECORDS</h2>
+            <div  class="rec-controls">
+                <button id="clear-all">CLEAR ALL</button>
+                <button id="download-records">DOWNLOAD</button>
+            </div>
+            <ul id="record-list" class="records-list">
+            </ul>
+        </div>
+
+    </div>
+</body>
+</html>
