@@ -8,9 +8,9 @@ The app uses local storage to keep persisting memory over records and avoid havi
 
 By default, the app has a limit of 50 records, but that can easily change by modifying `storageLimit` at **main.js**.
 
-You can check out the live version at: https://saudre.com/work/apps/stopwatch/.
+You can check out the live version [here](https://saudre.com/work/apps/stopwatch/)
 
-The app is also available in Spanish on the Spanish version of my website at: https://saudre.com/es/obra/apps/cronometro/
+The app is also available in Spanish on the [Spanish version of my website](https://saudre.com/es/obra/apps/cronometro/)
 
 Currently, I am working on a blog post for my website: [saudre.com](https://saudre.com/) explaining its development and the code structure. As soon as I finish the blog post, I will drop a link to the post here.
 
