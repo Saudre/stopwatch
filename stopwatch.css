@@ -183,6 +183,8 @@ body {
 
 .ctr-colors input {
     cursor: pointer;
+    -webkit-appearance: none; /* remove buttons in Firefox */
+    margin-bottom: 1rem;
 }
 
 .ctr-colors input::before {
