@@ -1,3 +1,4 @@
+![stopwatch](	https://saudre.com/resources/images/apps/stopwatch.webp)
 # Overview
 
 Stopwatch is a free and open-source app written in vanilla Javascript. 
@@ -13,8 +14,6 @@ You can check out the live version [here](https://saudre.com/work/apps/stopwatch
 The app is also available in Spanish on the [Spanish version of my website](https://saudre.com/es/obra/apps/cronometro/)
 
 Currently, I am working on a blog post for my website: [saudre.com](https://saudre.com/) explaining its development and the code structure. As soon as I finish the blog post, I will drop a link to the post here.
-
-![stopwatch](	https://saudre.com/resources/images/apps/stopwatch.webp)
 
 ## Run app
 
